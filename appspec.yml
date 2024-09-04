@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: / # Path in the repository
+    destination: /var/www/html # Path on the instance
+hooks:
+  AfterInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300
+      runas: root
